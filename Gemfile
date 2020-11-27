@@ -22,10 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# my gems
+# MY gems
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+
+gem 'dotenv-rails', groups: [:development, :test] # We don’t want to share those secret keys on Github, we can use the dotenv gem for security.
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
