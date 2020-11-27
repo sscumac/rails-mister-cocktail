@@ -1,6 +1,8 @@
 
 <div><%= @cocktail.name  %> </div>
 
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+
 <ul>
   <% @cocktail.doses.each do |dose| %>
     <%# <li><%= link_to cocktail.dose, cocktail_path(dose)</li> %> 

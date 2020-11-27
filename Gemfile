@@ -29,6 +29,8 @@ gem 'simple_form'
 
 gem 'dotenv-rails', groups: [:development, :test] # We don’t want to share those secret keys on Github, we can use the dotenv gem for security.
 
+gem 'cloudinary', '~> 1.16.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

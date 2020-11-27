@@ -1,9 +1,18 @@
 <h1>Cocktails</h1>
 
+<%# <%= cl_image_tag("test-image", width: 400, height: 300, crop: :fill) %> 
+
 <ul>
   <% @cocktails.each do |cocktail| %>
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
     <%# <input type="checkbox" unchecked> %>
+    <%# <div class="photo"> %>
+    <% if cocktail.photo.attached? %> 
+      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %> 
+    <% else %>
+      <%= cl_image_tag("placeholder-cocktail", width: 400, height: 300, crop: :fill) %>
+    <% end %> 
+    <%# </div> %>
   <% end %> 
 </ul>
 
