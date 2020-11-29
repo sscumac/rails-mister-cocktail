@@ -1,19 +1,29 @@
-<h1>Cocktails</h1>
+<h1>Cocky Cocktails</h1>
 
 <%# <%= cl_image_tag("test-image", width: 400, height: 300, crop: :fill) %> 
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <%# <input type="checkbox" unchecked> %>
-    <%# <div class="photo"> %>
-    <% if cocktail.photo.attached? %> 
-      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %> 
+<% @cocktails.each do |cocktail| %> 
+  <div class="card-cocktail"> 
+    <% if cocktail.photo.attached? %>
+      <img src="<%= cl_image_path cocktail.photo.key %>">
     <% else %>
-      <%= cl_image_tag("placeholder-cocktail", width: 400, height: 300, crop: :fill) %>
-    <% end %> 
-    <%# </div> %>
-  <% end %> 
-</ul>
+      <img src="<%= cl_image_path("placeholder-cocktail") %>">
+    <% end %>
+    <div class="card-cocktail-info">
+      <h5><%= cocktail.name %></h5>
+      <%= link_to "tell me more", cocktail_path(cocktail) %>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+<% end %>  
 
 <%= link_to "Add new cocktail", new_cocktail_path %> 
+
+<%# <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> %>
+

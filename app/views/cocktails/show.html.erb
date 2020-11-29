@@ -13,7 +13,7 @@
     <li><%= dose.description %> <%= dose.ingredient.name %></li>
     
     <%# <input type="checkbox" unchecked> %>
-    <%= link_to "remove", dose_path(dose), method: :delete, data: { confirm: "you really want to delete forever?" } %>    
+    <%= link_to "remove", dose_path(dose), method: :delete, data: { confirm: "Do you really want to delete forever?" } %>    
   <% end %> 
 </ul>
 
