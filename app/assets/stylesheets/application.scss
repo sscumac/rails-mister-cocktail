@@ -34,16 +34,44 @@ ul {
   height: 180px;
   background: white;
   display: flex;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   align-items: center;
   margin-top: 30px;
+}
+
+.card-cocktail-photo {
+  height: 180px;
+  width: 280px;
+  overflow: hidden;
 }
 
 .card-cocktail img {
   height: 100%;
   width: auto;
+  object-fit: cover;
+  // linear-gradient: (rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .card-cocktail-info {
   padding: 20px;
 }
+
+.brightness {
+    filter: brightness(0.9);
+}
+
+#new-cocktail {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 400px;
+  }
+
+  .card-cocktail-photo {
+    width: 200px;
+  }
+}
+

@@ -4,19 +4,21 @@
 
 <% @cocktails.each do |cocktail| %> 
   <div class="card-cocktail"> 
-    <% if cocktail.photo.attached? %>
-      <img src="<%= cl_image_path cocktail.photo.key %>">
-    <% else %>
-      <img src="<%= cl_image_path("placeholder-cocktail") %>">
-    <% end %>
+    <div class="card-cocktail-photo">
+      <% if cocktail.photo.attached? %>
+        <img class="brightness" src="<%= cl_image_path cocktail.photo.key %>">
+      <% else %>
+        <img src="<%= cl_image_path("placeholder-cocktail") %>">
+      <% end %>
+    </div>
     <div class="card-cocktail-info">
       <h5><%= cocktail.name %></h5>
-      <%= link_to "tell me more", cocktail_path(cocktail) %>
+      <%= link_to "more...", cocktail_path(cocktail) %>
     </div>
   </div>
 <% end %>  
 
-<%= link_to "Add new cocktail", new_cocktail_path %> 
+<div id="new-cocktail" ><%= link_to "Add new cocktail", new_cocktail_path %> </div>
 
 <%# <div class="card-product">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
